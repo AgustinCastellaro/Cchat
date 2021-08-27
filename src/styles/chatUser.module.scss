@@ -1,0 +1,36 @@
+.chatUser{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 65px;
+    background: #fff;
+
+    & img{
+        margin: 0 20px 0 0;
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        border-radius: 30px;
+    }
+
+    & a.name{
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    & button{
+        margin: 0 0 0 auto;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        & .icon{
+            font-size: 25px;
+        }
+    }
+}

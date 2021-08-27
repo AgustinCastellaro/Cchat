@@ -1,0 +1,57 @@
+@import "./variables.scss";
+
+.contact{
+    display: flex;
+    padding: 10px;
+
+    &:hover{
+        background: rgb(245, 245, 245);
+        cursor: pointer;
+    }
+
+    & img{
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 100%;
+    }
+
+    & .data{
+        margin: 8px 10px 0;
+        width: 100%;
+
+        & .topData{
+            display: flex;
+            height: 30px;
+            
+
+            & .name{
+                font-size: 16px;
+                font-weight: 500;
+                flex: 0.7;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            & .date{
+                text-align: end;
+                flex: 0.3;
+                margin: 0 0 0 20px;
+                font-size: 13px;
+                font-weight: 500;
+                color: rgb(124, 124, 124);
+                margin: 0 0 0 auto;
+            }
+        }
+
+        & .message{
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(124, 124, 124);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.NotificationSubmenu{
+    position: absolute;
+    top: 40px;
+    right: -40px;
+    width: 400px;
+    height: 450px;
+    background: #fff;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+
+    & .triangle{
+        position: absolute;
+        top: -8px;
+        right: 40px;
+        width: 20px;
+        height: 20px;
+        background: #ffffff;
+        z-index: 5;
+        transform: rotate(45deg);
+    }
+
+    & p.title{
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: rgb(128, 128, 128);
+        padding: 15px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    & .notifications{
+        margin: 0 5px 0 0;
+        height: 400px;
+        overflow: auto;
+
+        & .notification:last-child:hover{
+            border-radius: 10px;
+        }
+    }
+}
