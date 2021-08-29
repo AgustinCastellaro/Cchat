@@ -15,12 +15,10 @@ function Header() {
     const subMenuNotifications = () => {setHiddenNotifications(!hiddenNotifications)};
 
     //Si hay un cambio en el input, se muestra el dropdown de usuarios.
-    const subMenuSearch = () => {
+    useEffect(() => {
         console.log(searchValue.length);
-        if(searchValue.length > 0){
-            setHiddenSearch(true);
-        } 
-    }
+        (searchValue.length > 0) ? setHiddenSearch(false) : setHiddenSearch(true);
+    })
     
     return (
         <div className={styles.header}>
@@ -36,10 +34,9 @@ function Header() {
                         placeholder="Buscar un usuario..." 
                         value={searchValue} 
                         onChange={(e) => setSearchValue(e.target.value)} 
-                        onInput={subMenuSearch}
                     />
                     <BiSearch className={styles.iconSearch} />
-                    <div className={styles.searchUsersDropdown} hidden={true}>
+                    <div className={styles.searchUsersDropdown} hidden={hiddenSearch}>
                         <SearchUsers />
                     </div>
                 </div>
