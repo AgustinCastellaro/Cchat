@@ -42,25 +42,24 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+        }
+
+        & .add{
+            background: $standarBlueColor;
             
-            &.add{
-                background: $standarBlueColor;
-                
-                &:hover{
-                    background: $standarBlueColorHover;
-                }
-            }
-    
-            &.delete{
-                color: rgb(12, 12, 12);
-                background: rgb(223, 223, 223);
-                
-                &:hover{
-                    background: rgb(204, 204, 204);
-                }
+            &:hover{
+                background: $standarBlueColorHover;
             }
         }
 
+        & .delete{
+            color: rgb(12, 12, 12);
+            background: rgb(223, 223, 223);
+            
+            &:hover{
+                background: rgb(204, 204, 204);
+            }
+        }
     }
 
     &:hover{

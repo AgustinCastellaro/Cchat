@@ -2,25 +2,32 @@ import React, { useState, useEffect } from 'react'
 import styles from '../styles/contacts.module.scss';
 import Search from './Search';
 import Contact from './Contact';
-import { query } from "../query/Query";
+import { db } from '../firebase';
 
+const user = "C7dGLsmZRIQnO9Q0mScw";
 
 function Contacts() {
-    const [users, setUsers] = useState([])
-
+    const [rooms, setRoooms] = useState([])
+    
     useEffect(() => {
-      query().then(data => {
-          setUsers(data.results);
-          console.log(users)
-      })
+        db.collection('room')
+            .where("friends", "array-contains", user)
+            .get().then(snapshot => {
+                setRoooms(
+                    snapshot.docs.map(doc => ({
+                        id: doc.id,
+                        data: doc.data(),
+                    }))
+                )
+            })
     }, [])
 
     return (
         <div className={styles.contacts}>
             <Search />
             <div className={styles.contacts__List}>
-                {users.map(user => (
-                    <Contact key={user.id} name={user.name.first + " " + user.name.last} image={user.picture.thumbnail} />
+                {rooms.map(room => (
+                    <Contact key={room.id} id={room.id} name={room.data.name[0] + " " + room.data.name[1]} />
                 ))}
             </div>
         </div>

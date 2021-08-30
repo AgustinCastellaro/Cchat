@@ -1,4 +1,4 @@
-.chatUser{
+.chatHeader{
     display: flex;
     align-items: center;
     padding: 0 10px;
@@ -16,6 +16,7 @@
     & a.name{
         font-size: 16px;
         font-weight: 500;
+        color: #000000;
         text-decoration: none;
 
         &:hover{

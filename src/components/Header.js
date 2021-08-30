@@ -1,16 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import SearchUsers from './SearchUsers';
+import NotificationSubmenu from './NotificationSubmenu';
 import { IoIosChatbubbles } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { BiSearch } from 'react-icons/bi';
-import NotificationSubmenu from './NotificationSubmenu';
-import SearchUsers from './SearchUsers';
+import { auth } from '../firebase';
 import styles from '../styles/header.module.scss';
 
 function Header() {
     const [hiddenNotifications, setHiddenNotifications] = useState(true)
     const [hiddenSearch, setHiddenSearch] = useState(true)
     const [searchValue, setSearchValue] = useState("");
+
+    const Logout = () => {
+        auth.signOut();
+    }
 
     const subMenuNotifications = () => {setHiddenNotifications(!hiddenNotifications)};
 
@@ -40,6 +45,9 @@ function Header() {
                         <SearchUsers />
                     </div>
                 </div>
+                <button onClick={Logout}>
+                    Logout
+                </button>
                 <ul>
                     <li>
                         <button 

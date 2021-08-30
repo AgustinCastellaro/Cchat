@@ -6,12 +6,16 @@
     font-family: roboto, sans-serif;
   
     &::-webkit-scrollbar{
-      width: 5px;
+      width: 4px;
     }
   
     &::-webkit-scrollbar-thumb{
-      width: 5px;
+      width: 4px;
       background: $scrollBarThumb-background;
-      border-radius: 10px;
+      border-radius: 20px;
     }
+}
+
+body{
+  background: #f0f2f5;
 }
