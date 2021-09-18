@@ -1,31 +1,38 @@
 import React, { useState } from 'react';
+import { db, auth } from '../firebase';
+import firebase from 'firebase';
 import { IoSendSharp } from 'react-icons/io5';
-import { BsFillImageFill } from 'react-icons/bs';
-import styles from '../styles/sendMessage.module.scss';
+import '../styles/sendMessage.scss';
 
-function SendMessage() {
-    const [message, setMessage] = useState();
-    
-    const submit = (e) => {
+function SendMessage({ scroll }) {
+    const [message, setMessage] = useState('');
+
+    async function sendMessage(e){
         e.preventDefault();
-        console.log(message);
-        setMessage("");
+        const { uid, photoURL, displayName } = auth.currentUser;
+        await db.collection('messages').add({
+            text: message,
+            photoURL,
+            uid,
+            name: displayName, 
+            createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        setMessage('');
+        console.log(scroll.current);
+        scroll.current.scrollTo(0, document.body.scrollHeight);
     }
 
     return (
-        <div className={styles.sendMessage}>
-            <form onSubmit={submit}>
-                <button className={styles.image}>
-                    <BsFillImageFill />
-                </button>
+        <div className="sendMessage">
+            <form onSubmit={sendMessage}>
                 <input 
                     type="text" 
-                    placeholder="Escribe un mensaje..." 
                     value={message} 
                     onChange={(e) => setMessage(e.target.value)} 
-                    />
-                <button className={styles.send}>
-                    <IoSendSharp />
+                    placeholder="Type your message..." 
+                />
+                <button type="submit">
+                    <IoSendSharp className="icon" />
                 </button>
             </form>
         </div>

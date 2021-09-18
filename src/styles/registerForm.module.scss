@@ -1,0 +1,80 @@
+@import "./variables.scss";
+
+.loginForm{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 100px auto 0;
+    padding: 50px 20px;
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    
+    & h1{
+        font-size: 25px;
+        font-weight: 600;
+        color: $standarBlueColor;
+    }
+
+    & form{
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0 0;
+        
+        & input{
+            @include defaultInput;
+            width: 350px;
+            margin: 10px 0;
+        }
+
+        & button{
+            @include primaryButton;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 0;
+            padding: 15px;
+        }
+    }
+
+    & a{
+        color: $standarBlueColor;
+        text-decoration: none;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    & hr{
+        margin: 20px 0;
+        border: 1px solid rgb(223, 223, 223);
+        width: 100%;
+    }
+
+    & .sign{
+        margin: 10px 0 0;
+        text-align: center;
+
+        & p{
+            font-size: 14px;
+            font-weight: 500;
+            color: rgb(124, 124, 124);
+            margin: 0 0 10px;
+        }
+        
+        & a{
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            text-decoration: none;
+
+            &:hover{
+                color: $standarBlueColorHover;
+            }
+        }
+    }
+}

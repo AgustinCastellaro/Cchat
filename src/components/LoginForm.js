@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
+import { Link } from 'react-router-dom';
 import styles from '../styles/loginForm.module.scss';
 
 function LoginForm() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     
-    const onSubmit = (e) => {    
+    const onSubmit = (e) => {
         e.preventDefault()
         
         if(!email && !password){
@@ -44,9 +45,9 @@ function LoginForm() {
             </form>
             <a href="#">¿Olvidaste tu contraseña?</a>
             <hr />
-            <div className={styles.signup}>
-                <p>O Registrate con</p>
-                <a href="#">Registrarse</a>
+            <div className={styles.sign}>
+                <p>O Registrate aquí</p>
+                <Link to="/register" classname={styles.link}>Registrarse</Link>
             </div>
         </div>
     )

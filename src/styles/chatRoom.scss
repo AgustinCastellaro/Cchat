@@ -1,0 +1,110 @@
+@import "./variables";
+
+.chatRoom{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 20px;
+    height: calc(100vh - 85px);
+    background: rgb(228, 229, 240);
+
+    & .messages{
+        padding: 10px 20px;
+        height: 100%;
+        overflow: auto;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar{
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background: $scrollBarThumb-background;
+            border-radius: 20px;
+        }
+
+        & .message{
+            display: flex;
+            max-width: 500px;
+            width: auto;
+
+            & .image{
+                & img{
+                    width: 40px;
+                    height: 40px;
+                    object-fit: cover;
+                    border-radius: 30px;
+                    background: rgb(223, 229, 240);
+                }
+            }
+            
+            & .data{
+                display: flex;
+                flex-direction: column;
+                margin: 0 10px;
+                min-width: 200px;
+                
+                & .name{
+                    margin: 0 0 5px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: rgb(114, 114, 114);
+                    word-break: break-all;
+                }
+                
+                & .messageText{
+                    position: relative;
+                    padding: 10px;
+                    background: #fff;
+
+                    & .text{
+                        font-size: $font-size;
+                        word-break: break-all;
+                    }
+    
+                    & .createdAt{
+                        position: absolute;
+                        right: 5px;
+                        bottom: 5px;
+                        font-size: 10px;
+                        color: rgb(133, 133, 133);
+                    }
+                }
+            }
+
+            &.transmitter{
+                flex-direction: row-reverse;
+                margin: 10px 0 0 auto;
+
+                & .messageText{
+                    border-radius: 10px 0 10px 10px;
+                    background: $standarBlueColor;
+
+                    & .text{
+                        color: #fff;
+                    }
+
+                    & .createdAt{
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.receiver{
+                margin: 10px 0;
+
+                & .messageText{
+                    border-radius: 0 10px 10px 10px;
+                }
+            }
+
+            &.transmitter + .receiver{
+                margin: 15px 0;
+            }
+    
+            &.receiver + .transmitter{
+                margin: 15px 0 0 auto;
+            }
+        }
+    }
+}

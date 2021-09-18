@@ -3,19 +3,25 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: roboto, sans-serif;
-  
-    &::-webkit-scrollbar{
-      width: 4px;
-    }
-  
-    &::-webkit-scrollbar-thumb{
-      width: 4px;
-      background: $scrollBarThumb-background;
-      border-radius: 20px;
-    }
-}
+    font-family: 'Roboto', sans-serif;
 
-body{
-  background: #f0f2f5;
+    &::-webkit-scrollbar{
+        width: 5px;
+    }
+      
+    &::-webkit-scrollbar-thumb{
+        background: $scrollBar-background;
+        border-radius: 20px;
+    }
 }
+  
+  body {
+    margin: 0;
+    background: #ffffff;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  

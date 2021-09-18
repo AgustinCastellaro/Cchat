@@ -1,20 +1,16 @@
 import firebase from 'firebase';
-import 'firebase/auth';
-import 'firebase/firestore';
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCKIIyLskEFeMuOMQFvrL6jqfGdx3wPmyo",
-  authDomain: "cchat-3a253.firebaseapp.com",
-  projectId: "cchat-3a253",
-  storageBucket: "cchat-3a253.appspot.com",
-  messagingSenderId: "4254353380",
-  appId: "1:4254353380:web:c887812695afec029ca9f1",
-  measurementId: "G-HZYKRC478D"
-};
-
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp({
+    apiKey: "AIzaSyAOWYccnNM6oRZ1_BKzDOz_XG5MbzEfbhg",
+    authDomain: "testapp-4bffc.firebaseapp.com",
+    projectId: "testapp-4bffc",
+    storageBucket: "testapp-4bffc.appspot.com",
+    messagingSenderId: "597967072065",
+    appId: "1:597967072065:web:cdb981b9d4f0d113110fc0",
+    measurementId: "G-TSRZELK1PN"
+})
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 
-export { db, auth };
+export { db, auth }

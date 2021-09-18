@@ -2,10 +2,57 @@
 $standarBlueColor: rgb(33, 146, 252);
 $standarBlueColorHover: rgb(28, 130, 226);
 
-
 /* Font */
 $font-size: 15px;
+$font-weight: 500;
+
+/* Input */
+@mixin defaultInput{
+    font-size: $font-size;
+    font-weight: $font-weight;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+
+    &:focus{
+        border: 2px solid $standarBlueColor;
+        margin: 9px 0;
+    }
+}
+
+/* Buttons */
+@mixin primaryButton{
+    font-size: $font-size;
+    font-weight: $font-weight;
+    padding: 10px;
+    color: #fff;
+    background: $standarBlueColor;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover{
+        background: $standarBlueColorHover;
+    }
+}
+
+@mixin secondaryButton{
+    font-size: $font-size;
+    font-weight: $font-weight;
+    padding: 10px;
+    color: $standarBlueColor;
+    background: #fff;
+    border: 1px solid $standarBlueColor;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover{
+        background: rgb(238, 243, 252);
+    }
+}
 
 /* Scroll */
 $scrollBar-background:rgb(238, 238, 238);
-$scrollBarThumb-background:  rgb(218, 218, 218);
+$scrollBarThumb-background:  rgb(177, 177, 177);

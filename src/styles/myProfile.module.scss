@@ -1,0 +1,161 @@
+@import "./variables.scss";
+
+.myProfile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    padding: 20px 20px 0;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        max-width: 750px;
+
+        & .data{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: 0 0 10px;
+
+            & .image{
+                display: flex;
+                flex-direction: column;
+                margin: 0 20px 0 0;
+                padding: 10px 0;
+        
+                & img{
+                    margin: 0 auto;
+                    padding: 10px;
+                    width: 180px;
+                    height: 180px;
+                    object-fit: cover;
+                    border-radius: 100px;
+                    border: 1px solid $standarBlueColor;
+                }
+
+                & .uploadImage{
+                    position: relative;
+                    margin: 20px auto 10px;
+
+                    input{
+                        position: absolute;
+                        width: 100%;
+                        background: #ddd;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer;
+
+                        &:hover ~ button{
+                            background: rgb(238, 243, 252);
+                        }
+                    }
+            
+                    button{
+                        @include secondaryButton;
+                        padding: 12px;
+                        width: 200px;
+                    }
+                }
+
+            } 
+
+            & .personalInformation{
+                margin: 0 0 0 20px;
+                padding: 10px 0;
+        
+                & .head{
+                    display: flex;
+                    justify-content: space-between;
+        
+                    & .link{
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: rgb(32, 124, 211);
+                        cursor: pointer;
+                        text-decoration: none;
+                        
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                & .title{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: rgb(63, 63, 63);
+                }
+        
+                & .input{
+                    @include defaultInput;
+                    margin: 20px 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 0;
+                    width: 100%;
+        
+                    & input{
+                        font-size: 15px;
+                        padding: 12px;
+                        width: 100%;
+                        background: none;
+                        outline: none;
+                        border: none;
+                        
+                        &::placeholder{
+                            color: rgb(112, 112, 112);
+                        }
+                    }
+        
+                    & .inputTitle{
+                        margin: 0 15px;
+                        font-size: 15px;
+                        font-weight: 400;
+                        color: rgb(32, 124, 211);
+                        cursor: pointer;
+                        
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+
+        & hr{
+            width: 100%;
+            margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        & .buttons{
+            margin: 30px 0 0;
+            text-align: center;
+            background-color: #ccc;
+
+            & .save{
+                @include primaryButton;
+                padding: 15px 0;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 780px){
+    .myProfile form{
+        max-width: 500px;
+        width: 100%;
+
+        & .data{
+            flex-direction: column;
+
+            & .personalInformation,
+            & .image{
+                margin: 0;
+            }
+        }
+    }
+}

@@ -26,32 +26,17 @@
         margin: 20px 0 10px;
         
         & input{
-            font-size: 15px;
-            font-weight: 500;
-            margin: 10px 0;
-            padding: 15px;
+            @include defaultInput;
             width: 350px;
-            background: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            outline: none;
+            margin: 10px 0
         }
 
         & button{
-            font-size: 15px;
+            @include primaryButton;
+            font-size: 16px;
             font-weight: 600;
             margin: 10px 0;
             padding: 15px;
-            width: 100%;
-            color: #fff;
-            background: $standarBlueColor;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-
-            &:hover{
-                background: $standarBlueColorHover;
-            }
         }
     }
 
@@ -70,7 +55,7 @@
         width: 100%;
     }
 
-    & .signup{
+    & .sign{
         margin: 10px 0 0;
         text-align: center;
 

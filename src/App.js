@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
-import Mainpage from './pages/Mainpage';
+import React, { useState, useEffect } from 'react';
+import { auth } from './firebase';
+import MainPage from './pages/MainPage';
 import Login from './pages/Login';
-import Room from './pages/Room';
+import Register from './pages/Register';
+import Profile from './pages/Profile';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import { auth } from './firebase';
 import './App.css';
 
 function App() {
@@ -31,13 +32,17 @@ function App() {
   return (
     <div className="App">
       {!user ? (
-        <Login />
+        <Router>
+          <Switch>
+            <Route exact path={["/", "/login"]} component={Login} />
+            <Route exact path="/register" component={Register} />
+          </Switch>
+        </Router>
       ) : (
         <Router>
           <Switch>
-            <Route exact path="/" component={Mainpage} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/chat/:userId" component={Room} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </Router>
       )}
