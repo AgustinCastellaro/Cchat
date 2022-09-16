@@ -8,7 +8,7 @@ Debes tener instalado
 2) npm
 
 ## Instalation
-1) Clone the repository
+1) Clona el repositorio
 ```bash
 git clone https://github.com/AgustinCastellaro/MovieApp.git
 ```
